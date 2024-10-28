@@ -1,9 +1,8 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace SortFiles
 {
-    class Program
+    internal class Program
     {
         public static void Main(String[] args){
             Console.WriteLine("Sortfiles ver 1.0");
