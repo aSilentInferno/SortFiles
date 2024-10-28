@@ -22,14 +22,36 @@ namespace SortFiles
             }
 
         }
-
-        private static void MoveFiles(string path){
+        private static void MoveFiles(string path)
+        {
             string[] fileArr = Directory.GetFiles(path);
-            foreach(string file in fileArr){
-                string gamename = TrimName(file);
+            foreach (string file in fileArr)
+            {
+                string gameName = TrimName(file);
 
+                // Build the destination directory and file path
+                string destinationDir = Path.Combine(path, gameName);
+                string destinationPath = Path.Combine(destinationDir, Path.GetFileName(file));
+
+                // Ensure the directory exists
+                Directory.CreateDirectory(destinationDir);
+
+                try
+                {
+                    // Move the file to the new location
+                    Directory.Move(file, destinationPath);
+                }
+                catch (IOException ioEx)
+                {
+                    Console.WriteLine($"Error moving file '{file}' to '{destinationPath}': {ioEx.Message}");
+                }
+                catch (UnauthorizedAccessException authEx)
+                {
+                    Console.WriteLine($"Access denied for file '{file}': {authEx.Message}");
+                }
             }
         }
+
         //gets the game name from the file name
         internal static string TrimName(string input){
             // Regex pattern to capture everything before the date pattern (year:month:day)
