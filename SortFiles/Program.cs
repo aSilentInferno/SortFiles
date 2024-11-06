@@ -28,6 +28,9 @@ namespace SortFiles
             foreach (string file in fileArr)
             {
                 string gameName = TrimName(file);
+                if(String.IsNullOrEmpty(gameName)){
+                    continue;
+                }
 
                 // Build the destination directory and file path
                 string destinationDir = Path.Combine(path, gameName);
