@@ -85,7 +85,7 @@ If your file names follow a different naming pattern, modify the `ExtractGameNam
 ---
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the GNU GPLv3 License. See the [LICENSE](LICENSE) file for more information.
 
 --- 
 
@@ -93,5 +93,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 This program is intended for personal use to help organize files and improve workflow. Please verify the program behavior with test files before using it on critical data.
 
 ---
-
-This README now provides a comprehensive overview of the tool, instructions for installation and usage, and example scenarios to guide users.
